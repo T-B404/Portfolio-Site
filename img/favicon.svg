@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Tasneem Bharmal">
+  <rect width="32" height="32" fill="#191919"/>
+  <g fill="#4d96ff">
+    <rect x="6" y="6" width="20" height="4"/>
+    <rect x="14" y="10" width="4" height="16"/>
+    <rect x="10" y="22" width="12" height="4" opacity="0.45"/>
+  </g>
+  <rect x="5" y="5" width="22" height="22" fill="none" stroke="#4d96ff" stroke-opacity="0.35" stroke-width="1"/>
+</svg>
