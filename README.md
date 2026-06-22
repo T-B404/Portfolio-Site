@@ -4,14 +4,6 @@ Interactive PHP portfolio with a chat-style UI. Explore skills, projects, educat
 
 ![Portfolio preview](img/preview.png)
 
-## Live demo
-
-Run locally with XAMPP/Apache:
-
-```
-http://localhost/demos/
-```
-
 ## Features
 
 - **Chat-based navigation** — ask about skills, projects, education, CV, and more
@@ -30,42 +22,6 @@ http://localhost/demos/
 | Icons | Font Awesome |
 | Fonts | Geist, Unbounded (Google Fonts) |
 | Server | Apache (XAMPP) |
-
-## Project structure
-
-```
-├── index.php              # Main entry point
-├── contact.php            # Contact form handler
-├── link-to-cv.php         # CV download
-├── includes/
-│   ├── config.php         # Site settings & helpers
-│   ├── head.php           # <head> partial
-│   ├── chat-ui.php        # Intro & chat shell
-│   ├── sections.php       # Chat flow content
-│   ├── footer.php         # Scripts & UI chrome
-│   └── side-decor.php     # Side stack/focus panels
-├── css/                   # Styles (style, custom, theme)
-├── js/                    # app.js, typewriter.js
-├── img/                   # Avatars, projects, favicon
-└── storage/               # Contact message log
-```
-
-## Local setup
-
-1. Clone the repo into your web root (e.g. `htdocs/demos`)
-2. Start Apache in XAMPP
-3. Open `http://localhost/demos/`
-4. Place your CV as `link-to-cv.pdf` in the project root (or update `cv_file` in `includes/config.php`)
-
-## Configuration
-
-Edit `includes/config.php` to update:
-
-- Name, role, tagline
-- Email, phone, location
-- GitHub & LinkedIn URLs
-- Intro quote
-- CV file path
 
 ## Contact
 
