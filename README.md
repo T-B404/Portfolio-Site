@@ -25,6 +25,12 @@ Interactive PHP portfolio with a chat-style UI. Explore skills, projects, educat
 | Frontend | HTML, CSS, JavaScript |
 | Icons | Font Awesome |
 | Fonts | Geist, Unbounded (Google Fonts) |
+<<<<<<< HEAD
+=======
+| Server | Apache (XAMPP) |
+=======
+| Hosting | [Render](https://render.com) (Docker) |
+>>>>>>> eee7c71 (Merge remote changes and update README)
 
 ## Local setup
 
