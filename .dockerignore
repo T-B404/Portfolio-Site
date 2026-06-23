@@ -1,0 +1,5 @@
+.git
+.gitignore
+.dockerignore
+storage/contact-messages.log
+assets

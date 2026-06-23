@@ -1,8 +1,0 @@
-DirectoryIndex index.php
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^index\.html$ index.php [R=301,L]
-    RewriteRule ^index-multicolors-dark\.html$ index.php [R=301,L]
-    RewriteRule ^link-to-cv\.html$ link-to-cv.php [R=301,L]
-</IfModule>

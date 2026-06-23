@@ -21,25 +21,56 @@ $site = [
 $pageTitle = $site['name'] . ' | ' . $site['role'];
 $bodyClass = 'dark';
 
-$scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? ''));
-$basePath = ($scriptDir === '/' || $scriptDir === '.') ? '' : rtrim($scriptDir, '/');
+$scriptName = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '/index.php');
+$scriptDir = dirname($scriptName);
+$basePath = in_array($scriptDir, ['/', '.', '\\'], true) ? '' : rtrim($scriptDir, '/');
+
+function siteUrl(): string
+{
+    static $cached = null;
+    if ($cached !== null) {
+        return $cached;
+    }
+
+    global $basePath, $site;
+
+    if (!empty($site['site_url'])) {
+        return $cached = rtrim($site['site_url'], '/') . '/';
+    }
+
+    $renderUrl = getenv('RENDER_EXTERNAL_URL');
+    if (is_string($renderUrl) && $renderUrl !== '') {
+        return $cached = rtrim($renderUrl, '/') . '/';
+    }
+
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+
+    if ($host === 'tasneem-portfolio.rf.gd') {
+        return $cached = 'https://tasneem-portfolio.rf.gd/';
+    }
+
+    $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (isset($_SERVER['SERVER_PORT']) && (string) $_SERVER['SERVER_PORT'] === '443')
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+
+    $scheme = $https ? 'https' : 'http';
+    $prefix = $basePath === '' ? '/' : $basePath . '/';
+
+    return $cached = $scheme . '://' . $host . $prefix;
+}
 
 function asset(string $path): string
 {
-    global $basePath;
-
-    return $basePath . '/' . ltrim($path, '/');
+    return siteUrl() . ltrim($path, '/');
 }
 
 function url(string $path = ''): string
 {
-    global $basePath;
-
     if ($path === '') {
-        return $basePath === '' ? '/' : $basePath . '/';
+        return siteUrl();
     }
 
-    return $basePath . '/' . ltrim($path, '/');
+    return siteUrl() . ltrim($path, '/');
 }
 
 function h(?string $value): string

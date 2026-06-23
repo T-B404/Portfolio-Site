@@ -17,11 +17,22 @@ Interactive PHP portfolio with a chat-style UI. Explore skills, projects, educat
 
 | Layer | Technologies |
 |-------|--------------|
-| Backend | PHP |
+| Backend | PHP 8.2, Apache |
 | Frontend | HTML, CSS, JavaScript |
 | Icons | Font Awesome |
 | Fonts | Geist, Unbounded (Google Fonts) |
+<<<<<<< HEAD
 | Server | Apache (XAMPP) |
+=======
+| Hosting | [Render](https://render.com) (Docker) |
+
+## Local setup
+
+1. Clone the repo
+2. Place in XAMPP `htdocs/demos` (or any Apache + PHP setup)
+3. Open `http://localhost/demos/`
+4. Ensure `link-to-cv.pdf` exists in the project root
+>>>>>>> 465af07 (Docker Added)
 
 ## Contact
 
