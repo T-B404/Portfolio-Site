@@ -1,0 +1,16 @@
+name: Keep Render awake
+
+on:
+  schedule:
+    # Render free tier sleeps after ~15 min idle — ping every 10 min
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping portfolio
+        run: |
+          curl -fsSL --max-time 120 -o /dev/null -w "HTTP %{http_code}\n" \
+            https://tasneem-portfolio.onrender.com/

@@ -24,6 +24,9 @@
                             <h2>
                                 <?= h($site['tagline']) ?>
                             </h2>
+                            <p class="intro-meta-mobile">
+                                <?= h($site['role_short']) ?> · <?= h($site['location']) ?>
+                            </p>
                         </div>
                         <!-- Intro Texts Ends -->
                         <!-- Intro Content Starts -->
@@ -33,16 +36,6 @@
                                 <img id="intro-image" src="<?= asset('img/avatar-intro.png') ?>" alt="<?= h($site['name']) ?>" class="intro-image">
                             </div>
                             <!-- Photo Ends -->
-                            <!-- Quote Starts -->
-                            <div class="quote">
-                                <p>
-                                    <?= h($site['intro_quote']) ?>
-                                </p>
-                                <span>
-                                    <?= h($site['intro_quote_author']) ?>
-                                </span>
-                            </div>
-                            <!-- Quote Ends -->
                             <!-- Call To Actions Starts -->
                             <div id="intro-options-target" class="intro-options">
                                 <button class="btn btn-primary" data-action="about">
@@ -57,6 +50,37 @@
                                 </button>
                             </div>
                             <!-- Call To Actions Ends -->
+                            <div class="mobile-hero-extras">
+                                <div class="mobile-chip-scroll" aria-label="Tech stack">
+                                    <div class="mobile-chip-track">
+                                        <div class="mobile-chip-group">
+                                            <span class="mobile-chip"><i class="fa-brands fa-python"></i> Python</span>
+                                            <span class="mobile-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                                            <span class="mobile-chip"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                                            <span class="mobile-chip"><i class="fa-solid fa-leaf"></i> Django</span>
+                                            <span class="mobile-chip"><i class="fa-solid fa-brain"></i> AI / ML</span>
+                                            <span class="mobile-chip"><i class="fa-solid fa-chart-line"></i> FinTech</span>
+                                        </div>
+                                        <div class="mobile-chip-group" aria-hidden="true">
+                                            <span class="mobile-chip"><i class="fa-brands fa-python"></i> Python</span>
+                                            <span class="mobile-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                                            <span class="mobile-chip"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                                            <span class="mobile-chip"><i class="fa-solid fa-leaf"></i> Django</span>
+                                            <span class="mobile-chip"><i class="fa-solid fa-brain"></i> AI / ML</span>
+                                            <span class="mobile-chip"><i class="fa-solid fa-chart-line"></i> FinTech</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mobile-quick-prompts">
+                                    <button type="button" class="btn btn-primary-nav mobile-prompt-chip" data-flow="skills"><i class="fa-solid fa-gear"></i> Skills</button>
+                                    <button type="button" class="btn btn-primary-nav mobile-prompt-chip" data-flow="projects"><i class="fa-solid fa-layer-group"></i> Projects</button>
+                                    <button type="button" class="btn btn-primary-nav mobile-prompt-chip" data-flow="education"><i class="fa-solid fa-graduation-cap"></i> Education</button>
+                                </div>
+                                <div class="mobile-social-row">
+                                    <a href="<?= h($site['github']) ?>" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                                    <a href="<?= h($site['linkedin']) ?>" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
                         </div>
                          <!-- Intro Content Ends -->
                     </div>

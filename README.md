@@ -25,12 +25,7 @@ Interactive PHP portfolio with a chat-style UI. Explore skills, projects, educat
 | Frontend | HTML, CSS, JavaScript |
 | Icons | Font Awesome |
 | Fonts | Geist, Unbounded (Google Fonts) |
-<<<<<<< HEAD
-=======
-| Server | Apache (XAMPP) |
-=======
 | Hosting | [Render](https://render.com) (Docker) |
->>>>>>> eee7c71 (Merge remote changes and update README)
 
 ## Local setup
 
@@ -38,6 +33,27 @@ Interactive PHP portfolio with a chat-style UI. Explore skills, projects, educat
 2. Place in XAMPP `htdocs/demos` (or any Apache + PHP setup)
 3. Open `http://localhost/demos/`
 4. Ensure `link-to-cv.pdf` exists in the project root
+
+## Keep site awake (Render free tier)
+
+Render sleeps after ~15 minutes of no traffic, which causes a slow first load (black screen on mobile). Two ways to prevent that:
+
+### Option A — UptimeRobot (recommended, 2 minutes)
+
+1. Sign up at [uptimerobot.com](https://uptimerobot.com) (free)
+2. Click **Add New Monitor**
+3. Settings:
+   - **Monitor Type:** HTTP(s)
+   - **Friendly Name:** Tasneem Portfolio
+   - **URL:** `https://tasneem-portfolio.onrender.com`
+   - **Monitoring Interval:** 5 minutes
+4. Click **Create Monitor**
+
+UptimeRobot will ping your site every 5 minutes so it stays warm.
+
+### Option B — GitHub Actions (already in this repo)
+
+The workflow `.github/workflows/keep-alive.yml` pings the site every 10 minutes automatically after you push to GitHub. Enable it under **Actions** tab on your repo (runs on public repos for free).
 
 ## Contact
 
